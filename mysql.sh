@@ -40,4 +40,3 @@ if [ $USERID -ne 0 ]
 
   mysql_secure_installation --set-root-pass ExpenseApp@1 &>>LOGFILE
   VALIDATE $? "setting up the root password"
-  
