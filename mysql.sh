@@ -28,6 +28,7 @@ if [ $USERID -ne 0 ]
   exit 1
   else 
   echo "you are a super user"
+fi
 
   dnf install mysql-server -y &>>LOGFILE
   VALIDATE $? "installing mysql-server"
