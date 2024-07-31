@@ -14,10 +14,10 @@ VALIDATE(){
 
     if [ $1 -ne 0 ]
      then 
-    echo -e "$2 ....$R. failure ..$N"
+    echo -e "$2 ....$R. failure  $N"
     exit 1
     else
-    echo -e "$2 ...$G.. success  ... $N"
+    echo -e "$2 ...$G.. success   $N"
     fi
 
 }
