@@ -27,8 +27,8 @@ VALIDATE(){
   echo "you are a super user"
  fi
 
-  dnf install mysql-server  &>>LOGFILE
-  VALIDATE $? "installing mysql-server"
+  dnf install mysql-server -y &>>LOGFILE
+  VALIDATE $? "installing mysql server"
 
   systemctl enable mysqld &>>LOGFILE
   VALIDATE $? "enabiling mysql server"
@@ -36,5 +36,6 @@ VALIDATE(){
   systemctl start mysqld &>>LOGFILE
   VALIDATE $? "starting mysql server"
 
-  mysql_secure_installation --set-root-passs ExpenseApp@1 &>>LOGFILE
+  mysql_secure_installation --set-root-pass ExpenseApp@1 &>>LOGFILE
   VALIDATE $? "mysql root password setup"
+  
