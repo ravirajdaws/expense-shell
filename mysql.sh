@@ -37,4 +37,4 @@ VALIDATE(){
   VALIDATE $? "starting mysql server"
 
   mysql_secure_installation --set-root-passs ExpenseApp@1 &>>LOGFILE
-  VALIDATE $? "setting up the root password"
+  VALIDATE $? "mysql root password setup"
