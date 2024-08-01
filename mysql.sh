@@ -27,7 +27,7 @@ VALIDATE(){
   echo "you are a super user"
  fi
 
-  dnf install mysql-server -y &>>LOGFILE
+  dnf install mysql-server  &>>LOGFILE
   VALIDATE $? "installing mysql-server"
 
   systemctl enable mysqld &>>LOGFILE
