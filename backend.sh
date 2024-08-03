@@ -19,8 +19,8 @@
     exit 1
  else
     echo "$2....$G success $N"
- if    
- }
+ if   
+   }
 
  if [ $USERID -ne 0 ]
  then 
