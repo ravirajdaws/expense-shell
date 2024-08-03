@@ -12,16 +12,16 @@
  echo "please enter the DB password:"
  read -s mysql_root_password
 
- VALIDATE(){
-    if [ $1 -ne 0 ]
-    then 
-       echo "$2....$R  Failure  $N"
-       exit 1
-    else
-       echo "$2....$G Success $N"
-    if    
+ VALIDATE() {
+ if [ $1 -ne 0 ]
+ then 
+    echo "$2....$R  Failure  $N"
+    exit 1
+ else
+    echo "$2....$G Success $N"
+ if    
  }
- 
+
  if [ $USERID -ne 0 ]
  then 
    echo "please try to run the script using root access"
