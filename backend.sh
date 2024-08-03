@@ -1,18 +1,18 @@
-#!/bin/bash
+ #!/bin/bash
 
-USERID=$(id -u)
-TIMESTAMP=$(date +%F-%H-%M-%S)
-SCRIPT_NAME=$(echo $0 | cut -d "." -f1)
-LOGFILE=/tmp/$TIMESTAMP-$SCRIPT_NAME.log
-R="\e[31m"
-G="\e[32m"
-Y="\e[33m"
-N="\e[0m"
+ USERID=$(id -u)
+ TIMESTAMP=$(date +%F-%H-%M-%S)
+ SCRIPT_NAME=$(echo $0 | cut -d "." -f1)
+ LOGFILE=/tmp/$TIMESTAMP-$SCRIPT_NAME.log
+ R="\e[31m"
+ G="\e[32m"
+ Y="\e[33m"
+ N="\e[0m"
 
-echo "please enter the DB password:"
-read -s mysql_root_password
+ echo "please enter the DB password:"
+ read -s mysql_root_password
 
-VALIDATE(){
+ VALIDATE(){
     if [ $1 -ne 0 ]
     then 
        echo "$2....$R  Failure  $N"
@@ -20,26 +20,26 @@ VALIDATE(){
     else
        echo "$2....$G Success $N"
     if    
-}
-if [ $USERID -ne 0 ]
+ }
+ if [ $USERID -ne 0 ]
  then 
    echo "please try to run the script using root access"
    exit 1
  else
-echo "you are a super user"
-fi 
+ echo "you are a super user"
+ fi 
 
-dnf module disable nodejs -y &>>LOGFILE
-VALIDATE $? "disabling default nodejs"
+ dnf module disable nodejs -y &>>LOGFILE
+ VALIDATE $? "disabling default nodejs"
 
-dnf module enable nodejs:20 -y &>>LOGFILE
-VALIDATE $? "enabling nodejs:20 version"
+ dnf module enable nodejs:20 -y &>>LOGFILE
+ VALIDATE $? "enabling nodejs:20 version"
 
-dnf install nodejs -y &>>LOGFILE
-VALIDATE $? "installing nodejs"
+ dnf install nodejs -y &>>LOGFILE
+ VALIDATE $? "installing nodejs"
 
-id expense &>>LOGFILE
-if [ $? -ne 0 ]
+ id expense &>>LOGFILE
+ if [ $? -ne 0 ]
  then 
    useradd expense &>>LOGFILE
    VALIDATE $? "creating a new user"
@@ -79,7 +79,7 @@ if [ $? -ne 0 ]
 
  systemctl restart backend &>>LOGFILE
  VALIDATE $? "restarting backend"
- 
+
 
 
 
