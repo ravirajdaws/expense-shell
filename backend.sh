@@ -21,6 +21,7 @@
        echo "$2....$G Success $N"
     if    
  }
+ 
  if [ $USERID -ne 0 ]
  then 
    echo "please try to run the script using root access"
