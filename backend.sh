@@ -64,7 +64,7 @@
  cp /home/ec2-user/expense-shell/backend.service /etc/systemd/system/backend.service &>>LOGFILE
  VALIDATE $? "copied backend service"
 
- sytemctl daemon-reload &>>LOGFILE
+ systemctl daemon-reload &>>LOGFILE
  VALIDATE $? "daemon reload"
  systemctl start backend &>>LOGFILE
  VALIDATE $? "starting backend"
