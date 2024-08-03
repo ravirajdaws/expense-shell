@@ -74,7 +74,7 @@
  dnf install mysql -y &>>LOGFILE
  VALIDATE $? "installing mysql client"
 
- mysql -h db.devopsdaws78.cloud -uroot -p{mysql_root_password} < /app/schema/backend.sql &>>LOGFILE
+ mysql -h db.devopsdaws78.cloud -uroot -p${mysql_root_password} < /app/schema/backend.sql &>>LOGFILE
  VALIDATE $? "loading schema"
 
  systemctl restart backend &>>LOGFILE
