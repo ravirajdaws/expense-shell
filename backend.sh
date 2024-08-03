@@ -12,13 +12,13 @@
  echo "please enter the DB password:"
  read -s mysql_root_password
 
- VALIDATE() {
+ VALIDATE(){
  if [ $1 -ne 0 ]
  then 
-    echo "$2....$R  Failure  $N"
+    echo "$2....$R  failure  $N"
     exit 1
  else
-    echo "$2....$G Success $N"
+    echo "$2....$G success $N"
  if    
  }
 
